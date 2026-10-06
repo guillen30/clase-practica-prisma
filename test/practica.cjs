@@ -197,9 +197,10 @@ async function check(name, fn) {
     console.error(e);
     process.exitCode = 1;
   })
-  .finally(() =>
+  .finally(() => {
+    fs.mkdirSync('test-results', { recursive: true });
     fs.writeFileSync(
-      '../evidencias/resultados-pruebas.json',
+      'test-results/practica.json',
       JSON.stringify(results, null, 2),
-    ),
-  );
+    );
+  });

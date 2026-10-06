@@ -1,11 +1,44 @@
 # Clase practica
 
+![Validacion de la practica](https://github.com/guillen30/clase-practica-prisma/actions/workflows/ci.yml/badge.svg?branch=master)
+
 Proyecto local basado en las guias GD_S7_S1, GD_S7_S2 y GD_S8_S1_FinalNode.
 NestJS 11 + Prisma 6.19.3 + SQLite + Swagger + JWT.
 
+## Informe y evidencias
+
+- [Informe en Word](docs/Informe_clase_practica.docx)
+- [Informe en PDF](docs/Informe_clase_practica.pdf)
+- [Informe navegable](docs/Informe_clase_practica.md)
+- [Capturas y registros de la practica](docs/evidencias)
+
+La practica incluye el modelo User/Tenant, dos migraciones, datos iniciales,
+las cinco operaciones CRUD, Swagger, autenticacion JWT y 19 pruebas.
+
+## Ramas
+
+| Rama | Funcion |
+| --- | --- |
+| `master` | Version validada para la entrega |
+| `qa` | Validacion previa a la entrega |
+| `develop` | Integracion del desarrollo |
+| `feature/practica-nestjs-prisma` | Implementacion de esta practica |
+
+El flujo de merges es `feature -> develop -> qa -> master`. Los commits de
+merge conservan los hitos de integracion. El workflow de GitHub Actions
+instala dependencias, recrea la base de datos, compila y ejecuta las 19 pruebas.
+Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para continuar el desarrollo.
+
 ## Ejecutar
 
-Desde esta carpeta:
+Clonar el repositorio y entrar en su carpeta:
+
+```bash
+git clone https://github.com/guillen30/clase-practica-prisma.git
+cd clase-practica-prisma
+```
+
+En PowerShell:
 
 ```powershell
 npm ci
@@ -27,6 +60,7 @@ El puerto 3001 se eligio porque 3000 estaba ocupado por otra aplicacion.
 
 En una segunda terminal, con el servidor encendido: `npm test`.
 Las pruebas usan `TEST_URL` si se necesita otra direccion.
+Los resultados se guardan en `test-results/practica.json`, excluido de Git.
 
 ## Datos de prueba
 
@@ -35,7 +69,7 @@ Las pruebas usan `TEST_URL` si se necesita otra direccion.
 - Tenant: Clase practica (id 1 en una base nueva).
 
 Son credenciales locales de demostracion. El seeder usa upsert y bcrypt.
-El archivo .env de esta copia local ya esta configurado. No se incluye en el ZIP.
+Configurar `.env` a partir de `.env.example`; `.env` no se versiona.
 
 ## Swagger
 
@@ -56,6 +90,8 @@ DELETE elimina realmente el usuario indicado: utilizar un registro de prueba.
 
 ## Estructura
 
+- .github/: validacion automatica y plantilla de pull requests.
+- docs/: informes, capturas y registros de la practica original.
 - prisma/: esquema, dos migraciones y seeder.
 - src/prisma/: cliente compartido mediante inyeccion de dependencias.
 - src/users/: DTO, controlador y servicio CRUD.
@@ -67,4 +103,4 @@ Todos los endpoints /users exigen JWT. Las respuestas no incluyen password.
 El rol se incorpora al JWT, pero no se aplica una politica de permisos por rol
 ni aislamiento por tenant: ese alcance supera las tres guias de esta practica.
 
-Se conservaron commits locales por hitos. No se publico en GitHub ni se envio a Teams.
+El historial conserva los commits de la practica y los merges de promocion.

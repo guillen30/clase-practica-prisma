@@ -3,3 +3,6 @@ dist/
 .env
 prisma/*.db*
 *.tsbuildinfo
+test-results/
+*.log
+coverage/
