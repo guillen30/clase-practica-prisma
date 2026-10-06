@@ -2,7 +2,7 @@
 
 ![Validacion de la practica](https://github.com/guillen30/clase-practica-prisma/actions/workflows/ci.yml/badge.svg?branch=master)
 
-Proyecto local basado en las guias GD_S7_S1, GD_S7_S2 y GD_S8_S1_FinalNode.
+Proyecto basado en las guias GD_S7_S1, GD_S7_S2 y GD_S8_S1_FinalNode.
 NestJS 11 + Prisma 6.19.3 + SQLite + Swagger + JWT.
 
 ## Informe y evidencias
@@ -28,6 +28,17 @@ El flujo de merges es `feature -> develop -> qa -> master`. Los commits de
 merge conservan los hitos de integracion. El workflow de GitHub Actions
 instala dependencias, recrea la base de datos, compila y ejecuta las 19 pruebas.
 Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para continuar el desarrollo.
+
+## Estado de la entrega
+
+El informe Word, el PDF y las evidencias estan publicados en este repositorio.
+La entrega inicial conserva los merges hacia develop, qa y master y la etiqueta
+`v1.0.0`. Las 19 pruebas HTTP y la compilacion se verificaron localmente.
+
+La primera ejecucion de GitHub Actions no pudo iniciar porque GitHub informo
+un bloqueo de la cuenta por facturacion. El resultado remoto queda pendiente
+de resolver ese bloqueo y volver a ejecutar el workflow; no equivale a un fallo
+de las pruebas de la aplicacion.
 
 ## Ejecutar
 
