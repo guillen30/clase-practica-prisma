@@ -1,0 +1,78 @@
+[
+  {
+    "prueba": "GET / devuelve Hello World!",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Swagger expone login y los cinco endpoints CRUD",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "GET /users sin token devuelve 401",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Login con contraseña incorrecta devuelve 401",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Login válido devuelve JWT con sub, email y role",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "JWT inválido devuelve 401",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "JWT vencido devuelve 401",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "GET /users autorizado no devuelve contraseñas",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "POST /users crea un usuario, devuelve 201",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "GET /users/:id consulta el usuario creado",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Correo duplicado devuelve 409",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "DTO inválido devuelve 400",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Tenant inexistente devuelve 400",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "PATCH /users/:id modifica nombre y contraseña",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "La nueva contraseña permite iniciar sesión",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "La contraseña almacenada es un hash bcrypt",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "DELETE /users/:id elimina el usuario de prueba",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Consultar el usuario eliminado devuelve 404",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Parámetro id inválido devuelve 400",
+    "resultado": "OK"
+  }
+]
