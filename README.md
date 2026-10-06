@@ -7,8 +7,7 @@ NestJS 11 + Prisma 6.19.3 + SQLite + Swagger + JWT.
 
 ## Informe y evidencias
 
-- [Informe en Word](docs/Informe_clase_practica.docx)
-- [Informe en PDF](docs/Informe_clase_practica.pdf)
+
 - [Informe navegable](docs/Informe_clase_practica.md)
 - [Capturas y registros de la practica](docs/evidencias)
 
