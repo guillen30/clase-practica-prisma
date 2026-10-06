@@ -1,0 +1,13 @@
+VERIFICACION DEL ENTORNO - CLASE PRACTICA
+Node.js: v25.8.1
+npm: 11.11.0
+@nestjs/cli: 11.0.24
+@nestjs/core: 11.2.7
+prisma: 6.19.3
+@prisma/client: 6.19.3
+@nestjs/swagger: 11.4.7
+@nestjs/jwt: 11.0.2
+API de la practica: http://127.0.0.1:3001
+Swagger: http://127.0.0.1:3001/api
+SQLite: prisma/dev.db
+Resultado final: 19 pruebas correctas

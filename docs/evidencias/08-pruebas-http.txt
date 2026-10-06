@@ -1,0 +1,25 @@
+
+> clase-practica@0.0.1 test
+> node test/practica.cjs
+
+OK | GET / devuelve Hello World!
+OK | Swagger expone login y los cinco endpoints CRUD
+OK | GET /users sin token devuelve 401
+OK | Login con contraseña incorrecta devuelve 401
+OK | Login válido devuelve JWT con sub, email y role
+OK | JWT inválido devuelve 401
+OK | JWT vencido devuelve 401
+OK | GET /users autorizado no devuelve contraseñas
+OK | POST /users crea un usuario, devuelve 201
+OK | GET /users/:id consulta el usuario creado
+OK | Correo duplicado devuelve 409
+OK | DTO inválido devuelve 400
+OK | Tenant inexistente devuelve 400
+OK | PATCH /users/:id modifica nombre y contraseña
+OK | La nueva contraseña permite iniciar sesión
+OK | La contraseña almacenada es un hash bcrypt
+OK | DELETE /users/:id elimina el usuario de prueba
+OK | Consultar el usuario eliminado devuelve 404
+OK | Parámetro id inválido devuelve 400
+
+19 pruebas correctas.
