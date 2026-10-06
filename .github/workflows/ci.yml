@@ -1,0 +1,63 @@
+name: Validacion de la practica
+
+on:
+  push:
+    branches: [master, qa, develop, 'feature/**']
+  pull_request:
+    branches: [master, qa, develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    name: Compilacion y 19 pruebas
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Obtener codigo
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Preparar entorno local de pruebas
+        run: |
+          node -e "const fs=require('fs');const crypto=require('crypto');fs.writeFileSync('.env','DATABASE_URL=\"file:./dev.db\"\nJWT_SECRET='+crypto.randomBytes(32).toString('hex')+'\nPORT=3001\n');fs.closeSync(fs.openSync('prisma/dev.db','a'));"
+          npx prisma migrate deploy
+          npx prisma generate
+          npx prisma db seed
+      - name: Compilar
+        run: npm run build
+      - name: Arrancar y comprobar la API
+        shell: bash
+        run: |
+          npm run start:prod > server.log 2>&1 &
+          API_PID=$!
+          trap 'kill "$API_PID" 2>/dev/null || true' EXIT
+          READY=0
+          for ATTEMPT in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:3001/ > /dev/null; then
+              READY=1
+              break
+            fi
+            sleep 1
+          done
+          if [ "$READY" != 1 ]; then
+            cat server.log
+            exit 1
+          fi
+          npm test
+      - name: Conservar resultados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-practica
+          path: |
+            server.log
+            test-results/practica.json
+          retention-days: 7

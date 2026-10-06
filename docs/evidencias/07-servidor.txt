@@ -1,0 +1,18 @@
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [NestFactory] Starting Nest application...
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [InstanceLoader] PrismaModule dependencies initialized +49ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [InstanceLoader] PassportModule dependencies initialized +0ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [InstanceLoader] JwtModule dependencies initialized +47ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [InstanceLoader] AppModule dependencies initialized +2ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [InstanceLoader] AuthModule dependencies initialized +1ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [InstanceLoader] UsersModule dependencies initialized +1ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RoutesResolver] AppController {/}: +86ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RouterExplorer] Mapped {/, GET} route +9ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RoutesResolver] UsersController {/users}: +0ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RouterExplorer] Mapped {/users, POST} route +3ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RouterExplorer] Mapped {/users, GET} route +1ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RouterExplorer] Mapped {/users/:id, GET} route +2ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RouterExplorer] Mapped {/users/:id, PATCH} route +2ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RouterExplorer] Mapped {/users/:id, DELETE} route +1ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RoutesResolver] AuthController {/auth}: +1ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [RouterExplorer] Mapped {/auth/login, POST} route +0ms
+[Nest] 7816  - 05/10/2026, 01:00:45     LOG [NestApplication] Nest application successfully started +46ms
